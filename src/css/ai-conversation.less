@@ -1,0 +1,197 @@
+@media only screen and (min-width: 0rem) {
+  #cs-AIConversation-301 {
+    background-color: #f1f5f9;
+    padding: clamp(2.5rem, 5vw, 4.5rem) (16/16rem);
+    min-height: 80vh;
+
+    .cs-container {
+      max-width: (1180/16rem);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: (24/16rem);
+    }
+
+    .cs-ticket-card {
+      background: #ffffff;
+      border: 2px solid #0f172a;
+      border-radius: (8/16rem);
+      padding: (24/16rem);
+
+      .cs-status-pill {
+        display: inline-block;
+        background: #dcfce7;
+        color: #166534;
+        font-weight: 700;
+        font-size: (12/16rem);
+        padding: (4/16rem) (10/16rem);
+        border-radius: (99/16rem);
+        margin-bottom: (12/16rem);
+      }
+
+      .cs-ticket-title {
+        font-size: (22/16rem);
+        color: #0f172a;
+        margin: 0 0 (8/16rem);
+      }
+
+      .cs-ticket-sub {
+        font-size: (14/16rem);
+        color: #475569;
+        margin-bottom: (20/16rem);
+      }
+
+      .cs-ticket-details {
+        margin: 0 0 (24/16rem);
+        border-top: 1px solid #e2e8f0;
+
+        div {
+          display: flex;
+          justify-content: space-between;
+          padding: (10/16rem) 0;
+          border-bottom: 1px solid #e2e8f0;
+          font-size: (14/16rem);
+        }
+
+        dt {
+          color: #64748b;
+          font-weight: 600;
+        }
+
+        dd {
+          margin: 0;
+          color: #0f172a;
+          font-weight: 800;
+          text-align: right;
+        }
+      }
+
+      .cs-voice-box {
+        background: #f8fafc;
+        border: 1px solid #cbd5e1;
+        padding: (16/16rem);
+        border-radius: (6/16rem);
+        text-align: center;
+
+        p {
+          margin: 0 0 (10/16rem);
+          font-size: (13/16rem);
+          color: #334155;
+          font-weight: 600;
+        }
+
+        .cs-voice-btn {
+          width: 100%;
+          background: #0f172a;
+          color: #fff;
+          font-weight: 800;
+          padding: (12/16rem);
+          border: none;
+          border-radius: (4/16rem);
+          cursor: pointer;
+        }
+      }
+    }
+
+    .cs-chat-stage {
+      background: #ffffff;
+      border: 2px solid #0f172a;
+      border-radius: (8/16rem);
+      display: flex;
+      flex-direction: column;
+      min-height: (520/16rem);
+      overflow: hidden;
+
+      .cs-chat-header {
+        background: #0f172a;
+        color: #ffffff;
+        padding: (16/16rem) (20/16rem);
+        display: flex;
+        align-items: center;
+        gap: (12/16rem);
+
+        .cs-agent-dot {
+          width: (12/16rem);
+          height: (12/16rem);
+          background: #22c55e;
+          border-radius: 50%;
+        }
+
+        strong {
+          display: block;
+          font-size: (16/16rem);
+        }
+
+        span {
+          font-size: (12/16rem);
+          color: #94a3b8;
+        }
+      }
+
+      .cs-chat-log {
+        flex: 1;
+        padding: (20/16rem);
+        display: flex;
+        flex-direction: column;
+        gap: (14/16rem);
+        overflow-y: auto;
+        background: #f8fafc;
+
+        .cs-bubble {
+          max-width: 82%;
+          padding: (14/16rem) (18/16rem);
+          border-radius: (8/16rem);
+          line-height: 1.5;
+          font-size: (15/16rem);
+        }
+
+        .cs-bubble-assistant {
+          align-self: flex-start;
+          background: #ffffff;
+          border: 1px solid #cbd5e1;
+          color: #0f172a;
+        }
+
+        .cs-bubble-user {
+          align-self: flex-end;
+          background: #0f172a;
+          color: #ffffff;
+        }
+      }
+
+      .cs-chat-input-bar {
+        display: flex;
+        border-top: 2px solid #e2e8f0;
+        padding: (12/16rem);
+        gap: (10/16rem);
+        background: #ffffff;
+
+        input {
+          flex: 1;
+          height: (46/16rem);
+          padding: 0 (14/16rem);
+          border: 1px solid #cbd5e1;
+          border-radius: (4/16rem);
+          font-size: (16/16rem);
+        }
+
+        button {
+          background: #dc2626;
+          color: #ffffff;
+          font-weight: 800;
+          padding: 0 (24/16rem);
+          border: none;
+          border-radius: (4/16rem);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 56rem) {
+  #cs-AIConversation-301 .cs-container {
+    grid-template-columns: (360/16rem) 1fr;
+    align-items: start;
+  }
+}

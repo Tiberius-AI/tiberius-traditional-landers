@@ -1,67 +1,24 @@
-<!-- ============================================ -->
-<!--                   Footer                     -->
-<!-- ============================================ -->
+{% set activeBrand = client[brand] if brand else client.pest %}
 
-<footer id="footer">
-    <div class="container">
-        <div class="left-section">
-            <a class="logo" href="/"><img loading="lazy" decoding="async" src="/assets/images/logo-light.png" alt="logo" width="264" height="78"></a>
-            <p>
-                Extra content if you need it, if not you can delete this whole p tag. I usually do.
-            </p>
-        </div>
-        <div class="right-section">
-            <div class="lists">
-                <ul>
-                    <li>
-                        <h2>Information</h2>
-                    </li>
-                    <li>
-                        <a href="/">Home</a>
-                    </li>
-                    <li>
-                        <a href="/about">About Us</a>
-                    </li>
-                    <li>
-                        <a href="/projects">Projects</a>
-                    </li>
-                    <li>
-                        <a href="/testimonials">Reviews</a>
-                    </li>
-                    <li>
-                        <a href="/contact">Contact</a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <h2>Services</h2>
-                    </li>
-                    <li>Service1</li>
-                    <li>Service2</li>
-                    <li>Service4</li>
-                    <li>Service5</li>
-                </ul>
-                <ul>
-                    <li>
-                        <h2>Contact</h2>
-                    </li>
-                    <li>
-                        <a href="/contact">First Address Line<br>Denver CO 80206</a>
-                    </li>
-                    <li>
-                        <a href="tel:555-779-4407">T: (555) 779-4407</a>
-                    </li>
-                    <li>
-                        <a href="mailto:email@email.com">Click to Email</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
+<footer id="cs-footer" style="background-color: #0f172a; color: #cbd5e1; padding: 3rem 1rem 5.5rem; font-size: 0.9rem;">
+  <div class="cs-container" style="max-width: 80rem; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
+    <div>
+      <strong style="color: #ffffff; font-size: 1.1rem; display: block; margin-bottom: 0.25rem;">{{ activeBrand.businessName }}</strong>
+      <span>{{ activeBrand.license }} • Serving {{ activeBrand.serviceArea }}</span>
+      <div style="margin-top: 0.5rem; font-size: 0.85rem; color: #cbd5e1; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;">
+        <span>Direct Dispatch:</span>
+        <a href="tel:{{ activeBrand.phoneForTel }}" data-click-to-call="true" style="color: #facc15; text-decoration: none; font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; padding: 0 0.35rem;">{{ activeBrand.phoneFormatted }}</a>
+        <span>•</span>
+        <a href="sms:+18303608517" data-click-to-text="true" style="color: #38bdf8; text-decoration: none; font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; padding: 0 0.35rem;">Click to Text 24/7</a>
+      </div>
     </div>
-
-    <div class="credit">
-        <span>Designed and Hand Coded by</span>
-        <a href="" target="_blank" rel="noopener">Your Company Name</a>
-        <span class="copyright"> Copyright 2021 - Present</span>
+    <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+      <a href="/pest-control/" style="color: #cbd5e1; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 0.4rem;">Variation A: Pest Control</a>
+      <a href="/tree-service/" style="color: #cbd5e1; text-decoration: none; min-height: 44px; display: inline-flex; align-items: center; padding: 0 0.4rem;">Variation B: Tree Service</a>
+      <a href="/ai-conversation/?trade={{ activeBrand.slug }}" style="color: #facc15; text-decoration: none; font-weight: 700; min-height: 44px; display: inline-flex; align-items: center; padding: 0 0.4rem;">AI Dispatch Desk</a>
+      <button type="button" data-open-backoffice="true" style="min-height: 44px; display: inline-flex; align-items: center; background: #1e293b; color: #f8fafc; border: 1px solid #475569; padding: 0.5rem 0.9rem; border-radius: 0.25rem; font-weight: 700; cursor: pointer; font-size: 0.84rem;">
+        Open 3-Pane Back-Office Room
+      </button>
     </div>
+  </div>
 </footer>

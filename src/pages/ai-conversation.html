@@ -1,0 +1,298 @@
+---
+layout: 'base.html'
+brand: 'tree'
+description: 'Interactive AI project scoping and instant dispatch desk.'
+metaTitle: 'Instant Quote & Dispatch Desk'
+tagTitle: 'AI Dispatch'
+preloadCSS: '/css/ai-conversation.css'
+permalink: 'ai-conversation/'
+---
+
+<section id="cs-AIConversation-301">
+  <div class="cs-container">
+    <!-- Left Column: Captured Lead Summary Ticket -->
+    <aside class="cs-ticket-card">
+      <span class="cs-status-pill">Live Dispatch Session Active</span>
+      <h2 id="ai-brand-title" class="cs-ticket-title">IronOak Tree Service &amp; Land Clearing</h2>
+      <p class="cs-ticket-sub">Your project details have been logged. Complete your instant quote with our dispatch assistant.</p>
+
+      <dl class="cs-ticket-details">
+        <div>
+          <dt>Customer:</dt>
+          <dd id="ticket-name">Homeowner</dd>
+        </div>
+        <div>
+          <dt>Phone:</dt>
+          <dd id="ticket-phone">On File</dd>
+        </div>
+        <div>
+          <dt>ZIP Code:</dt>
+          <dd id="ticket-zip">78130</dd>
+        </div>
+        <div>
+          <dt>Requested Scope:</dt>
+          <dd id="ticket-service">Hazardous or Large Tree Removal</dd>
+        </div>
+      </dl>
+
+      <div class="cs-voice-box">
+        <p>Prefer voice? Talk to our AI Voice Dispatcher live:</p>
+        <a href="tel:8305550148" id="ai-voice-trigger" class="cs-voice-btn" style="display: block; text-align: center; text-decoration: none;">
+          📞 Call Live AI Voice Dispatcher
+        </a>
+      </div>
+
+      <div style="margin-top: 1.25rem; padding-top: 1rem; border-top: 1px solid #e2e8f0; display: flex; flex-direction: column; gap: 0.65rem;">
+        <a id="ai-open-bo-link" href="/tree-service/?openBackoffice=1" style="display: block; text-align: center; background: #14281d; color: #f59e0b; border: 1px solid #d97706; padding: 0.65rem 0.85rem; border-radius: 0.35rem; font-size: 0.82rem; font-weight: 800; text-decoration: none;">
+          Inspect Live Thread in Back-Office Room ⌘K →
+        </a>
+        <a id="ai-back-link" href="/tree-service/" style="font-size: 0.85rem; font-weight: 800; color: #14281d; text-decoration: none; text-align: center;">
+          ← Return to IronOak Tree Service Website
+        </a>
+      </div>
+    </aside>
+
+    <!-- Right Column: Shared AI Chat / Conversation Window -->
+    <div class="cs-chat-stage">
+      <div class="cs-chat-header" id="ai-chat-header-bar">
+        <div class="cs-agent-dot"></div>
+        <div>
+          <strong id="chat-agent-name">Oakley AI • ISA Arborist &amp; Dispatch Desk</strong>
+          <span>Online • Instant Quote &amp; Calendar Access</span>
+        </div>
+      </div>
+
+      <div id="ai-chat-log" class="cs-chat-log">
+        <!-- Populated dynamically via JS on load -->
+      </div>
+
+      <form id="ai-chat-form" class="cs-chat-input-bar">
+        <input
+          type="text"
+          id="ai-user-input"
+          placeholder="Type your reply here..."
+          autocomplete="off"
+          required
+        />
+        <button type="submit">Send →</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const params = new URLSearchParams(window.location.search);
+    const stored = JSON.parse(sessionStorage.getItem("tiberius_active_lead") || "null");
+
+    const tradeParam = params.get("trade") || (stored && stored.trade) || "tree-service";
+    const isTree = tradeParam === "tree-service";
+
+    const lead = stored || {
+      trade: tradeParam,
+      businessName: isTree
+        ? "IronOak Tree Service & Land Clearing"
+        : "Lone Star Shield Pest & Termite",
+      name: params.get("name") || "Property Owner",
+      phone: "Provided",
+      zip: params.get("zip") || "78132",
+      service: params.get("service") || (isTree ? "Hazardous or Large Tree Removal" : "General Pest Control"),
+      serviceType: params.get("service") || (isTree ? "Hazardous or Large Tree Removal" : "General Pest Control"),
+      urgency: "Standard",
+      notes: ""
+    };
+
+    const scopeText = lead.service || lead.serviceType || "Service Quote";
+
+    // Populate Left Ticket
+    document.getElementById("ai-brand-title").textContent = lead.businessName;
+    document.getElementById("ticket-name").textContent = lead.name;
+    document.getElementById("ticket-phone").textContent = lead.phone;
+    document.getElementById("ticket-zip").textContent = lead.zip;
+    document.getElementById("ticket-service").textContent = scopeText;
+
+    const backLink = document.getElementById("ai-back-link");
+    if (backLink) {
+      backLink.href = isTree ? "/tree-service/" : "/pest-control/";
+      backLink.textContent = isTree
+        ? "← Return to IronOak Tree Service Website"
+        : "← Return to Lone Star Shield Pest Control";
+    }
+
+    const openBoLink = document.getElementById("ai-open-bo-link");
+    if (openBoLink) {
+      openBoLink.href = isTree
+        ? "/tree-service/?openBackoffice=1"
+        : "/pest-control/?openBackoffice=1";
+      if (!isTree) {
+        openBoLink.style.background = "#0f172a";
+        openBoLink.style.color = "#ffffff";
+        openBoLink.style.borderColor = "#dc2626";
+      }
+    }
+
+    const agentName = document.getElementById("chat-agent-name");
+    if (agentName) {
+      agentName.textContent = isTree
+        ? "Oakley AI • ISA Certified Arborist Dispatch (#TX-4491A)"
+        : "Shield AI • Licensed TPCL #089412 Dispatch Desk";
+    }
+
+    // Dynamically sync header branding on the shared AI route
+    const navEl = document.getElementById("cs-navigation");
+    if (navEl && !isTree) {
+      navEl.setAttribute("data-brand", "pest");
+      const topStrip = navEl.querySelector("div");
+      if (topStrip) topStrip.style.background = "#0f172a";
+      const badgeEl = topStrip ? topStrip.querySelector("span") : null;
+      if (badgeEl) {
+        badgeEl.style.background = "#dc2626";
+        badgeEl.textContent = "Same-Day Local Dispatch";
+      }
+      const licEl = navEl.querySelector(".cs-top-license-text");
+      if (licEl) licEl.textContent = "TPCL #089412 • Serving Comal, Guadalupe & Bexar Counties";
+      const logoLink = navEl.querySelector(".cs-logo");
+      if (logoLink) {
+        logoLink.href = "/pest-control/";
+        const badgeIcon = logoLink.querySelector("span");
+        if (badgeIcon) {
+          badgeIcon.style.background = "#0f172a";
+          badgeIcon.style.borderColor = "#dc2626";
+          badgeIcon.style.color = "#ffffff";
+          badgeIcon.textContent = "LS";
+        }
+        const strongEl = logoLink.querySelector("strong");
+        if (strongEl) strongEl.textContent = "Lone Star Shield Pest & Termite";
+        const tagEl = logoLink.querySelector(".cs-brand-tagline");
+        if (tagEl) tagEl.textContent = "Same-Day Pest, Scorpion & Termite Elimination";
+      }
+      const callBtn = navEl.querySelector('a[href^="tel:"]');
+      if (callBtn) {
+        callBtn.href = "tel:8305550192";
+        callBtn.style.backgroundColor = "#dc2626";
+        callBtn.textContent = "📞 Call (830) 555-0192";
+      }
+      const boBtn = document.getElementById("openBackofficeBtn");
+      if (boBtn) {
+        boBtn.onclick = () => {
+          window.location.href = "/pest-control/?openBackoffice=1";
+        };
+      }
+    } else if (navEl && isTree) {
+      const boBtn = document.getElementById("openBackofficeBtn");
+      if (boBtn) {
+        boBtn.onclick = () => {
+          window.location.href = "/tree-service/?openBackoffice=1";
+        };
+      }
+    }
+
+    const isTrimmingScope = /trim|prune|pruning|canopy/i.test(scopeText + " " + (lead.notes || ""));
+    const openingBallpark = isTrimmingScope ? "$950 – $2,150" : "$2,200 – $3,800";
+
+    // Craft Contextual First AI Message
+    const openingMessage = isTree
+      ? `Hi ${lead.name}! I have your ${scopeText} ticket for ZIP ${lead.zip}${lead.notes ? ` ("${lead.notes}")` : ""}. Based on Central Texas ISA arborist rates, our preliminary turnkey ballpark for this scope is ${openingBallpark} including sterilized blades, Texas Oak Wilt wound sealing, and full brush cleanup. Roughly how tall are the trees (1-story vs 2-story height), and do we have clear driveway access?`
+      : `Hi ${lead.name}! I have your ${scopeText} request for ZIP ${lead.zip} (${lead.urgency}). To lock in your exact treatment price right now, roughly how many square feet is the property, and are you seeing activity inside, outside, or both?`;
+
+    const chatLog = document.getElementById("ai-chat-log");
+    const appendBubble = (role, text) => {
+      const div = document.createElement("div");
+      div.className = `cs-bubble cs-bubble-${role}`;
+      div.textContent = text;
+      chatLog.appendChild(div);
+      chatLog.scrollTop = chatLog.scrollHeight;
+    };
+
+    appendBubble("assistant", openingMessage);
+
+    function syncSharedAiConversationToBackoffice(userText, aiText) {
+      try {
+        if (/trim|prune|pruning|canopy/i.test(userText)) {
+          lead.service = "Tree Trimming & Structural Canopy Pruning";
+          lead.estimateRange = "$950 – $2,150";
+          const svcEl = document.getElementById("ticket-service");
+          if (svcEl) svcEl.textContent = lead.service;
+        }
+        lead.notes = userText;
+        lead.chatTranscript = lead.chatTranscript || [
+          {
+            sender: "system",
+            time: "Just now",
+            text: `🔔 Shared AI Dispatch Desk Session • ${lead.service} (${lead.estimateRange || openingBallpark})`
+          },
+          { sender: "ai", time: "Just now", text: openingMessage }
+        ];
+        lead.chatTranscript.push(
+          { sender: "customer", time: "Just now", text: userText },
+          { sender: "ai", time: "Just now", text: aiText }
+        );
+        sessionStorage.setItem("tiberius_active_lead", JSON.stringify(lead));
+        localStorage.setItem("tiberius_latest_lead", JSON.stringify(lead));
+
+        const storageKey = isTree ? "tiberius_tree_bo_threads_v1" : "tiberius_pest_bo_threads_v1";
+        const rawThreads = localStorage.getItem(storageKey);
+        if (rawThreads) {
+          const threadsArr = JSON.parse(rawThreads);
+          if (Array.isArray(threadsArr)) {
+            const threadId = lead.id || "shared-ai-lead";
+            let target = threadsArr.find((t) => t.id === threadId || t.name === lead.name);
+            if (!target) {
+              target = {
+                id: threadId,
+                name: lead.name || "Property Owner",
+                phone: lead.phone || "(830) 555-0199",
+                location: lead.zip || "New Braunfels, TX 78132",
+                service: lead.service || scopeText,
+                estimate: lead.estimateRange || openingBallpark,
+                equipment: isTrimmingScope
+                  ? "75ft Tracked Spider Lift + Sterilized Saws + 18\" Chipper"
+                  : "45-Ton Hydraulic Crane + AlturnaMATS®",
+                oakWilt: "100% Sterilized Blades + Immediate Latex Wound Sealant",
+                source: "Shared AI Dispatch Desk",
+                status: "Action Required",
+                handoverMode: "manual",
+                unread: true,
+                notes: userText,
+                suggestedDraft: `Hi ${lead.name || "there"} — ISA Arborist Cody with IronOak (#TX-4491A) here. Following up on your ${lead.service || scopeText} inquiry. Does tomorrow at 8:30 AM or 2:00 PM work for a quick 15-minute walkthrough?`,
+                messages: lead.chatTranscript
+              };
+              threadsArr.unshift(target);
+            } else {
+              target.service = lead.service || target.service;
+              target.estimate = lead.estimateRange || target.estimate;
+              target.notes = userText;
+              target.status = "Action Required";
+              target.unread = true;
+              target.messages = lead.chatTranscript;
+            }
+            localStorage.setItem(storageKey, JSON.stringify(threadsArr));
+          }
+        }
+      } catch (err) {
+        // ignore storage errors
+      }
+    }
+
+    const chatForm = document.getElementById("ai-chat-form");
+    const userInput = document.getElementById("ai-user-input");
+
+    chatForm.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = userInput.value.trim();
+      if (!text) return;
+
+      appendBubble("user", text);
+      userInput.value = "";
+
+      const replyText = isTree
+        ? `Got it! For your ${lead.service || scopeText} in ${lead.zip}, our ISA Certified Arborist Cody (#TX-4491A) can stop by for a 15-minute property walkthrough and exact written lock-in (${lead.estimateRange || openingBallpark}). Would you prefer Tomorrow Morning (8:30 AM) or Tomorrow Afternoon (2:00 PM)? (Your inquiry is now live in the Back-Office Room!)`
+        : `Got it. Based on your ${scopeText} details in ${lead.zip}, our standard range for that scope is ready. Would you prefer morning (8–11 AM) or afternoon (1–4 PM) for a technician visit?`;
+
+      setTimeout(() => {
+        appendBubble("assistant", replyText);
+        syncSharedAiConversationToBackoffice(text, replyText);
+      }, 400);
+    });
+  });
+</script>

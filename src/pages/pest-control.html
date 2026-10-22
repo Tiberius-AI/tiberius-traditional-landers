@@ -1,0 +1,1004 @@
+---
+layout: 'base.html'
+brand: 'pest'
+description: 'Same-day pest, bark scorpion, rodent exclusion, and subterranean termite control across Comal, Guadalupe & Bexar Counties. Upfront pricing and guaranteed elimination.'
+metaTitle: 'Lone Star Shield Pest & Termite | Same-Day Pest Control'
+tagTitle: 'Pest Control'
+preloadCSS: '/css/pest-control.css'
+permalink: 'pest-control/'
+---
+
+<!-- ============================================ -->
+<!--   JSON-LD LocalBusiness / PestControlService -->
+<!-- ============================================ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HomeAndConstructionBusiness",
+  "additionalType": "https://schema.org/PestControlService",
+  "name": "{{ client.pest.businessName }}",
+  "description": "Licensed Texas Pest Control (#TPCL-089412) specializing in same-day bark scorpion barrier seals, Termidor HE subterranean termite defense, WDI real estate reports, and steel-mesh rodent exclusion across Comal, Guadalupe & Bexar Counties.",
+  "url": "{{ client.domain }}/pest-control/",
+  "telephone": "+1-830-555-0192",
+  "priceRange": "$-$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "{{ client.address.lineOne }}",
+    "addressLocality": "{{ client.address.city }}",
+    "addressRegion": "{{ client.address.state }}",
+    "postalCode": "{{ client.address.zip }}",
+    "addressCountry": "US"
+  },
+  "areaServed": [
+    "New Braunfels, TX",
+    "San Marcos, TX",
+    "Seguin, TX",
+    "San Antonio, TX",
+    "Schertz, TX",
+    "Cibolo, TX",
+    "Bulverde, TX"
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "bestRating": "5",
+    "worstRating": "1",
+    "reviewCount": "412"
+  }
+}
+</script>
+
+<!-- ============================================ -->
+<!--          60/40 PPC SPLIT HERO                -->
+<!-- ============================================ -->
+<section id="cs-HeroSplit-101">
+  <!-- Background Hero Video + Dark Readability Overlay -->
+  <div class="cs-hero-video-wrap" aria-hidden="true">
+    <video
+      id="pestHeroBgVideo"
+      class="cs-hero-bg-video"
+      autoplay
+      loop
+      muted
+      playsinline
+      preload="auto"
+    >
+      <source src="/assets/videos/pest-control.mp4" type="video/mp4" />
+    </video>
+    <div class="cs-hero-video-overlay"></div>
+  </div>
+
+  <div class="cs-container">
+    <div class="cs-content">
+      <div class="cs-hero-badge-row">
+        <span class="cs-topper">{{ client.pest.license }} • Same-Day Pest &amp; Termite Elimination</span>
+        <span class="cs-live-route-pill">
+          <span class="cs-live-dot"></span>
+          3 Licensed Route Trucks Active in Comal, Guadalupe &amp; Bexar
+        </span>
+      </div>
+
+      <h1 class="cs-title">Bugs Gone Today—Or We Come Back Free.</h1>
+      <p class="cs-text">
+        No pushy door-to-door contracts or mystery pricing. Get an instant treatment plan and locked-in quote for bark scorpions, termites, roof rats, fire ants, and roaches in under 60 seconds.
+      </p>
+
+      <ul class="cs-ul">
+        <li class="cs-li"><strong>Same-Day Service:</strong> Check in before 2 PM for same-day local route dispatch.</li>
+        <li class="cs-li"><strong>100% Kid &amp; Pet Safe:</strong> Targeted weep-hole/perimeter barriers &amp; botanical interior options.</li>
+        <li class="cs-li"><strong>Zero-Pest Guarantee:</strong> Unlimited free re-treatments between scheduled visits.</li>
+      </ul>
+
+      <div class="cs-hero-cta-row">
+        <a href="#pest-photo-estimator" class="cs-btn-crimson">📸 Snap Bug or Damage Photo for Instant ID</a>
+        <button type="button" class="cs-btn-navy-ai" data-open-pest-ai="chat">
+          🛡️ Ask Shield AI Dispatch Desk
+        </button>
+      </div>
+
+      <div class="cs-trust-row">
+        <div class="cs-trust-item">
+          <strong>412+</strong>
+          <span>5-Star Local Reviews</span>
+        </div>
+        <div class="cs-trust-item">
+          <strong>$0</strong>
+          <span>Termite Check w/ Service</span>
+        </div>
+        <div class="cs-trust-item">
+          <strong>15 Min</strong>
+          <span>Avg. Dispatch Response</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Elevated Traditional Intake Card -> AI Handoff -->
+    <div class="cs-form-card">
+      <div class="cs-card-header">
+        <span class="cs-card-tag">Instant Online Quote &amp; Dispatch</span>
+        <h2 class="cs-card-title">Check Same-Day Pricing &amp; Route Slots</h2>
+        <p class="cs-card-sub">Enter your details below to lock in upfront pricing &amp; launch our instant pest dispatch desk.</p>
+      </div>
+
+      <form
+        class="cs-form"
+        data-ai-intake-form
+        data-trade="pest-control"
+        data-business-name="{{ client.pest.businessName }}"
+        data-phone="{{ client.pest.phoneFormatted }}"
+        data-webhook="{{ client.aiBackend.leadWebhookUrl }}"
+        data-ai-page="{{ client.aiBackend.conversationUrl }}"
+      >
+        <label class="cs-label">
+          Your Full Name *
+          <input class="cs-input" type="text" name="name" placeholder="e.g., Sarah Jenkins" required />
+        </label>
+
+        <div class="cs-form-grid">
+          <label class="cs-label">
+            Mobile Phone *
+            <input class="cs-input" type="tel" name="phone" placeholder="(830) 555-0199" required />
+          </label>
+          <label class="cs-label">
+            ZIP Code *
+            <input class="cs-input" type="text" name="zip" placeholder="78130" required />
+          </label>
+        </div>
+
+        <label class="cs-label">
+          What Pest Are You Dealing With? *
+          <select class="cs-select" name="serviceType" required>
+            <option value="Scorpions &amp; Spiders">Scorpions &amp; Spiders (Bark Scorpion Seal)</option>
+            <option value="Termites / Wood Damage / WDI Report">Termites / Mud Tubes / WDI Inspection</option>
+            <option value="Rodents / Roof Rats in Attic">Rodents / Roof Rats in Attic</option>
+            <option value="Roaches, Fire Ants &amp; General Pests">Roaches, Fire Ants &amp; General Pests</option>
+            <option value="Mosquito, Flea &amp; Tick Yard Barrier">Mosquito, Flea &amp; Tick Yard Barrier</option>
+            <option value="Commercial / Restaurant Pest Shield">Commercial / Restaurant Health Inspection</option>
+          </select>
+        </label>
+
+        <label class="cs-label">
+          How Urgent Is This?
+          <select class="cs-select" name="urgency">
+            <option value="Emergency — Need Service Today / ASAP">Emergency — Need Service Today / ASAP</option>
+            <option value="Within 2-3 Days">Within the Next 2–3 Days</option>
+            <option value="Comparing Quotes / Preventative">Just Comparing Quotes / Preventative</option>
+          </select>
+        </label>
+
+        <label class="cs-tcpa-check">
+          <input type="checkbox" name="tcpaConsent" checked required />
+          <span>I agree to receive 1-to-1 quote &amp; arrival text updates from <strong>{{ client.pest.businessName }}</strong>. Reply STOP to opt out.</span>
+        </label>
+
+        <button type="submit" class="cs-button-solid cs-submit">
+          Get Instant Quote &amp; Chat With Dispatch →
+        </button>
+
+        <p class="cs-privacy">
+          🔒 Direct 1-to-1 local dispatch ({{ client.pest.license }}). Zero shared lead aggregators.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--   Single-Card Photo & Pest ID Estimator      -->
+<!-- ============================================ -->
+<section id="pest-photo-estimator" class="pest-estimator-section">
+  <div class="cs-container">
+    <div class="pest-estimator-shell">
+      <div class="pest-estimator-header">
+        <div>
+          <span class="pest-eyebrow">INSTANT AI PEST IDENTIFICATION &amp; TREATMENT QUOTE</span>
+          <h2 class="pest-section-title">Snap a Photo of the Pest, Mud Tube, or Entry Point</h2>
+          <p class="pest-section-sub">
+            Or click a common Central Texas pest issue below for an instant chemical safety spec, warranty breakdown, and exact first-visit knockdown price.
+          </p>
+        </div>
+        <div class="pest-estimator-badge">
+          <strong>TPCL #089412 Protocol Engine</strong>
+          <span>Kid &amp; Pet Safe • 100% Free Re-Treatments</span>
+        </div>
+      </div>
+
+      <!-- Quick Pest Scope Pills -->
+      <div class="pest-scope-pills" role="group" aria-label="Quick select pest issue">
+        <button type="button" class="pest-scope-pill" data-pest-pill="Striped bark scorpions found inside master bathroom &amp; baseboards (~2,400 sq ft home)">
+          🦂 Bark Scorpions Inside Home
+        </button>
+        <button type="button" class="pest-scope-pill" data-pest-pill="Suspected subterranean termite mud tubes on slab foundation / need Termidor barrier &amp; WDI report">
+          🪵 Termite Mud Tubes / WDI
+        </button>
+        <button type="button" class="pest-scope-pill" data-pest-pill="Scratching noises in attic at night — need steel-mesh roofline rodent exclusion &amp; trapping">
+          🐀 Roof Rats / Attic Scratching
+        </button>
+        <button type="button" class="pest-scope-pill" data-pest-pill="German roaches in kitchen cabinets + heavy fire ant mounds across backyard lawn">
+          🐜 Roaches &amp; Fire Ant Mounds
+        </button>
+        <button type="button" class="pest-scope-pill" data-pest-pill="Heavy mosquitoes, fleas, and ticks in shaded backyard near patio &amp; dog run">
+          🦟 Mosquito, Flea &amp; Tick Yard
+        </button>
+      </div>
+
+      <form id="pestPhotoEstimatorForm" class="pest-single-estimator-form" novalidate>
+        <div class="pest-estimator-grid">
+          <!-- 1. Photo Upload -->
+          <div class="pest-upload-box">
+            <input type="file" id="pestPhotoInput" accept="image/*" hidden />
+            <button type="button" id="pestPhotoTriggerBtn" class="pest-upload-btn">
+              <span class="pest-upload-icon">📷</span>
+              <span>
+                <strong>Upload Pest / Damage Photo (Optional)</strong>
+                <small>Snap bug, droppings, mud tubes, or weep holes</small>
+              </span>
+            </button>
+            <div id="pestPhotoPreviewWrap" class="pest-photo-preview" hidden>
+              <img
+                id="pestPhotoPreviewImg"
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                alt="Uploaded pest or damage preview"
+              />
+              <div class="pest-photo-meta">
+                <span id="pestPhotoPreviewName">pest-photo.jpg</span>
+                <button type="button" id="pestPhotoRemoveBtn" class="pest-photo-remove">Remove ×</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. Pest & Property Input -->
+          <div class="pest-input-box">
+            <label for="pestScopeInput">Describe the Pest Activity &amp; Approx. Home Size</label>
+            <input
+              type="text"
+              id="pestScopeInput"
+              name="scopeDescription"
+              required
+              placeholder="e.g., Seeing bark scorpions upstairs in New Braunfels, 2,500 sq ft home..."
+            />
+          </div>
+
+          <!-- 3. Phone Input -->
+          <div class="pest-input-box">
+            <label for="pestEstimatorPhone">Mobile Phone (For Written SMS Quote)</label>
+            <input
+              type="tel"
+              id="pestEstimatorPhone"
+              name="phone"
+              required
+              placeholder="(830) 555-0199"
+            />
+          </div>
+
+          <!-- 4. Submit -->
+          <div class="pest-submit-box">
+            <button type="submit" id="pestEstimatorSubmitBtn" class="pest-submit-btn">
+              Get Instant Pest Quote →
+            </button>
+          </div>
+        </div>
+
+        <div class="pest-estimator-footer">
+          <span>🔒 Direct 1-to-1 dispatch with <strong>{{ client.pest.businessName }}</strong> ({{ client.pest.license }}).</span>
+          <button type="button" class="pest-link-btn" data-open-pest-ai="sms">Prefer a direct text quote? Text Shield AI →</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--     6-Card Targeted Treatment Capabilities   -->
+<!-- ============================================ -->
+<section id="cs-Services-101">
+  <div class="cs-container">
+    <div class="cs-header">
+      <span class="pest-eyebrow">LICENSED TPCL #089412 PROTOCOLS</span>
+      <h2 class="pest-section-title">Built for Stubborn Central Texas Pests</h2>
+      <p class="pest-section-sub">Click any treatment card below to inspect active chemistry, kid/pet drying times, warranty coverage, and upfront pricing.</p>
+    </div>
+
+    <div class="pest-cards-grid">
+      <article class="pest-card" tabindex="0" role="button" data-pest-cap="scorpion-seal" aria-label="Inspect Scorpion and Spider Seal protocol and pricing">
+        <div class="pest-card-top">
+          <span class="pest-card-tag">MICRO-ENCAPSULATED BARRIER</span>
+          <span class="pest-card-price">$129 – $189 Initial</span>
+        </div>
+        <h3>Scorpion &amp; Spider Barrier Seal</h3>
+        <p>We treat brick weep holes, soffit eaves, plumbing penetrations, and a 10-foot foundation perimeter using Demand® CS micro-capsules that penetrate scorpion exoskeletons.</p>
+        <span class="pest-card-cta">Inspect Chemistry &amp; Lock Price →</span>
+      </article>
+
+      <article class="pest-card" tabindex="0" role="button" data-pest-cap="termite-wdi" aria-label="Inspect Termite Defense and WDI Reports protocol and pricing">
+        <div class="pest-card-top">
+          <span class="pest-card-tag">$250K DAMAGE WARRANTY</span>
+          <span class="pest-card-price">$95 WDI / $650+ Barrier</span>
+        </div>
+        <h3>Termite Defense &amp; Real Estate WDI</h3>
+        <p>Non-repellent Termidor® HE trench-and-treat liquid barriers and Trelona® ATBS bait stations that eliminate entire subterranean termite colonies, plus same-day VA/FHA WDI reports.</p>
+        <span class="pest-card-cta">Inspect Termite Specs &amp; Price →</span>
+      </article>
+
+      <article class="pest-card" tabindex="0" role="button" data-pest-cap="rodent-exclusion" aria-label="Inspect Rodent Exclusion and Sanitization protocol and pricing">
+        <div class="pest-card-top">
+          <span class="pest-card-tag">100% STEEL-MESH EXCLUSION</span>
+          <span class="pest-card-price">$395 – $1,250 Turnkey</span>
+        </div>
+        <h3>Rodent Exclusion &amp; Attic Sanitization</h3>
+        <p>We never just toss poison in your attic. We seal every roof return, gable vent, and AC chase with chew-proof 1/4" galvanized hardware cloth, trap active rats, and mist enzyme sanitizer.</p>
+        <span class="pest-card-cta">Inspect Exclusion Specs &amp; Price →</span>
+      </article>
+
+      <article class="pest-card" tabindex="0" role="button" data-pest-cap="roach-fireant" aria-label="Inspect German Roach and Fire Ant Knockdown protocol and pricing">
+        <div class="pest-card-top">
+          <span class="pest-card-tag">IGR COLONY ERADICATION</span>
+          <span class="pest-card-price">$119 – $179 Initial</span>
+        </div>
+        <h3>German Roach &amp; Fire Ant Knockdown</h3>
+        <p>Odorless Alpine® WSG + Gentrol® Insect Growth Regulator gel baiting inside kitchen/bath hinges paired with TopChoice® season-long fire ant yard granular broadcast.</p>
+        <span class="pest-card-cta">Inspect Knockdown Protocol &amp; Price →</span>
+      </article>
+
+      <article class="pest-card" tabindex="0" role="button" data-pest-cap="mosquito-tick" aria-label="Inspect Mosquito Flea and Tick Yard Barrier protocol and pricing">
+        <div class="pest-card-top">
+          <span class="pest-card-tag">21-DAY BACKYARD SHIELD</span>
+          <span class="pest-card-price">$89 / Monthly Barrier</span>
+        </div>
+        <h3>Mosquito, Flea &amp; Tick Yard Fogging</h3>
+        <p>High-pressure backpack misting of shaded foliage, oak canopies, and dog runs combined with In2Care® larvicide stations that break the mosquito breeding cycle on contact.</p>
+        <span class="pest-card-cta">Inspect Yard Barrier Specs &amp; Price →</span>
+      </article>
+
+      <article class="pest-card" tabindex="0" role="button" data-pest-cap="commercial-pest" aria-label="Inspect Commercial and Restaurant Pest Compliance protocol and pricing">
+        <div class="pest-card-top">
+          <span class="pest-card-tag">HEALTH CODE AUDIT READY</span>
+          <span class="pest-card-price">$145 / Mo Commercial</span>
+        </div>
+        <h3>Commercial &amp; Restaurant Compliance</h3>
+        <p>After-hours IPM service for restaurants, medical clinics, warehouses, and HOAs with barcode-scanned bait stations, fly light maintenance, and digital health-inspector logs.</p>
+        <span class="pest-card-cta">Inspect Commercial Specs &amp; Price →</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--   Interactive Pest & Termite Cost Calculator -->
+<!-- ============================================ -->
+<section id="pest-calculator" class="pest-calc-section">
+  <div class="cs-container">
+    <div class="pest-calc-grid">
+      <div class="pest-calc-controls">
+        <span class="pest-eyebrow">UPFRONT CENTRAL TEXAS PRICING — NO DOOR-TO-DOOR GAMES</span>
+        <h2 class="pest-section-title">Interactive Pest &amp; Termite Pricing Calculator</h2>
+        <p class="pest-section-sub">
+          Select your target pest, home square footage, and service frequency to see your exact first-visit knockdown rate and re-treatment warranty.
+        </p>
+
+        <div class="pest-calc-group">
+          <label class="pest-calc-label">1. Select Primary Pest Target</label>
+          <div class="pest-calc-row" id="pestCalcTargetGroup">
+            <button type="button" class="pest-calc-opt active" data-pest-target="scorpions">Scorpions &amp; General Pests</button>
+            <button type="button" class="pest-calc-opt" data-pest-target="termites">Subterranean Termites / WDI</button>
+            <button type="button" class="pest-calc-opt" data-pest-target="rodents">Roof Rats / Attic Exclusion</button>
+            <button type="button" class="pest-calc-opt" data-pest-target="mosquito">Mosquito, Flea &amp; Tick Yard</button>
+          </div>
+        </div>
+
+        <div class="pest-calc-group">
+          <label class="pest-calc-label">2. Property Square Footage</label>
+          <div class="pest-calc-row" id="pestCalcSizeGroup">
+            <button type="button" class="pest-calc-opt" data-pest-size="small">Under 2,000 sq ft</button>
+            <button type="button" class="pest-calc-opt active" data-pest-size="medium">2,000 – 3,500 sq ft</button>
+            <button type="button" class="pest-calc-opt" data-pest-size="large">3,500+ sq ft / Acreage Lot</button>
+          </div>
+        </div>
+
+        <div class="pest-calc-group">
+          <label class="pest-calc-label">3. Protection Plan Type</label>
+          <div class="pest-calc-row" id="pestCalcPlanGroup">
+            <button type="button" class="pest-calc-opt active" data-pest-plan="quarterly">Quarterly Shield (Save $50 + Free Re-Treats)</button>
+            <button type="button" class="pest-calc-opt" data-pest-plan="onetime">One-Time Intensive Knockdown</button>
+            <button type="button" class="pest-calc-opt" data-pest-plan="bundle">Total Home + Yard + Termite Bundle</button>
+          </div>
+        </div>
+
+        <div class="pest-calc-addons">
+          <label class="pest-calc-check">
+            <input type="checkbox" id="pestCalcWeepCheck" checked />
+            <span>Include Brick Weep-Hole Scorpion Dusting &amp; Eave Web Sweep (Included Free)</span>
+          </label>
+          <label class="pest-calc-check">
+            <input type="checkbox" id="pestCalcFireAntCheck" checked />
+            <span>Add Yard Fire Ant Mound Granular Treatment (+$35)</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="pest-calc-output-card">
+        <span class="pest-calc-badge">LOCKED-IN UPFRONT ESTIMATE</span>
+        <div class="pest-calc-price" id="pestCalcPriceDisplay">$149 Initial • $115/Qtr</div>
+        <p class="pest-calc-summary" id="pestCalcSummaryText">
+          2,000–3,500 sq ft Home • Scorpion &amp; General Pest Barrier • Quarterly Shield Plan + Fire Ant Yard Granular
+        </p>
+
+        <div class="pest-calc-specs">
+          <div class="pest-calc-spec-item">
+            <span>Assigned TPCL Chemistry:</span>
+            <strong id="pestCalcChemSpec">Demand® CS Micro-Cap Perimeter + Botanical Interior Crack/Crevice</strong>
+          </div>
+          <div class="pest-calc-spec-item">
+            <span>Kid &amp; Pet Safety Window:</span>
+            <strong id="pestCalcSafeSpec">100% Safe Once Dry (~30 Minutes) • Zero Harsh Odors</strong>
+          </div>
+          <div class="pest-calc-spec-item">
+            <span>Guarantee &amp; Arrival Window:</span>
+            <strong id="pestCalcWarrantySpec">Unlimited Free Re-Seals • Same-Day Dispatch Available</strong>
+          </div>
+        </div>
+
+        <div class="pest-calc-actions">
+          <button type="button" id="pestCalcLockBtn" class="pest-calc-primary-btn">
+            Lock In This Rate &amp; Claim Same-Day Slot →
+          </button>
+          <button type="button" class="pest-calc-secondary-btn" data-open-pest-ai="callback">
+            Request Licensed TPCL Inspector Callback
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--       4.9-Star Verified Local Reviews        -->
+<!-- ============================================ -->
+<section id="pest-reviews" class="pest-reviews-section">
+  <div class="cs-container">
+    <div class="pest-reviews-header">
+      <div>
+        <span class="pest-eyebrow">TRUSTED ACROSS COMAL, GUADALUPE &amp; BEXAR COUNTIES</span>
+        <h2 class="pest-section-title">4.9 ★ Local Reputation — 412+ Verified Homeowners</h2>
+      </div>
+      <div class="pest-reviews-badge">
+        <span class="pest-stars">★★★★★</span>
+        <div>
+          <strong>4.9 Out of 5.0 Stars</strong>
+          <span>TPCL #089412 Verified Reviews</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="pest-reviews-grid">
+      <article class="pest-review-card">
+        <div class="pest-review-top">
+          <div>
+            <strong>Marcus &amp; Courtney Webb</strong>
+            <span>Veramendi • New Braunfels, TX</span>
+          </div>
+          <span class="pest-review-pill">Bark Scorpion Seal</span>
+        </div>
+        <p>
+          "New construction in Veramendi meant finding 2–3 bark scorpions a week in our kids' playroom. Lone Star Shield dusted every weep hole, sealed our garage expansion joints, and treated the limestone wall. Haven't seen a live scorpion in 8 months."
+        </p>
+        <div class="pest-review-bottom">
+          <span>★★★★★ Verified Homeowner</span>
+          <span>Initial Visit: $149</span>
+        </div>
+      </article>
+
+      <article class="pest-review-card">
+        <div class="pest-review-top">
+          <div>
+            <strong>Brenda Villarreal, Realtor®</strong>
+            <span>Seguin &amp; Schertz, TX</span>
+          </div>
+          <span class="pest-review-pill">Termite Barrier &amp; WDI</span>
+        </div>
+        <p>
+          "They are my go-to for VA and FHA WDI termite inspections. When a listing in Seguin showed active subterranean mud tubes 5 days before closing, their crew trenched and treated with Termidor the very next morning and saved the closing."
+        </p>
+        <div class="pest-review-bottom">
+          <span>★★★★★ Real Estate Partner</span>
+          <span>Termidor + WDI Warranty</span>
+        </div>
+      </article>
+
+      <article class="pest-review-card">
+        <div class="pest-review-top">
+          <div>
+            <strong>David &amp; Kimitzer Cho</strong>
+            <span>Stone Oak • San Antonio, TX</span>
+          </div>
+          <span class="pest-review-pill">Attic Rodent Exclusion</span>
+        </div>
+        <p>
+          "Another company wanted $2,800 just to set bait boxes. Lone Star Shield sealed 7 roofline entry gaps with heavy galvanized steel mesh, trapped 4 roof rats over 5 days, and sanitized the attic runs for $685 total."
+        </p>
+        <div class="pest-review-bottom">
+          <span>★★★★★ 1-Year Exclusion Warranty</span>
+          <span>Job Total: $685</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!--     Treatment Protocol Lightbox Modal        -->
+<!-- ============================================ -->
+<div id="pest-capability-lightbox" class="pest-modal-backdrop" hidden aria-hidden="true">
+  <div class="pest-modal-card" role="dialog" aria-modal="true" aria-labelledby="pestCapTitle">
+    <div class="pest-modal-header">
+      <div>
+        <span class="pest-modal-tag" id="pestCapTag">TPCL #089412 CERTIFIED PROTOCOL</span>
+        <h3 id="pestCapTitle">Scorpion &amp; Spider Barrier Seal</h3>
+      </div>
+      <button type="button" id="pestCapCloseBtn" class="pest-modal-close" aria-label="Close protocol modal">×</button>
+    </div>
+    <div class="pest-modal-body">
+      <div class="pest-modal-banner">
+        <div>
+          <span>Upfront Central Texas Pricing</span>
+          <strong id="pestCapPrice">$129 – $189 Initial</strong>
+        </div>
+        <div>
+          <span>Active Chemistry &amp; Equipment</span>
+          <strong id="pestCapChem">Demand® CS + Delta Dust Weep-Hole Injection</strong>
+        </div>
+      </div>
+      <p id="pestCapDesc" class="pest-modal-desc"></p>
+      <ul id="pestCapChecklist" class="pest-modal-list"></ul>
+    </div>
+    <div class="pest-modal-footer">
+      <button type="button" id="pestCapSelectBtn" class="pest-submit-btn">
+        Lock In This Treatment Plan For My Home →
+      </button>
+      <button type="button" class="pest-modal-sec-btn" data-open-pest-ai="chat">
+        Ask Shield AI About Kid/Pet Safety
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!--   Instant Pest Estimate Breakdown Modal      -->
+<!-- ============================================ -->
+<div id="pest-estimate-modal" class="pest-modal-backdrop" hidden aria-hidden="true">
+  <div class="pest-modal-card" role="dialog" aria-modal="true" aria-labelledby="pestEstTitle">
+    <div class="pest-modal-header">
+      <div>
+        <span class="pest-modal-tag">LONE STAR SHIELD AI DIAGNOSTIC GENERATED</span>
+        <h3 id="pestEstTitle">Your Instant Pest Treatment &amp; Pricing Plan</h3>
+      </div>
+      <button type="button" id="pestEstCloseBtn" class="pest-modal-close" aria-label="Close estimate modal">×</button>
+    </div>
+    <div class="pest-modal-body">
+      <div class="pest-est-hero">
+        <div>
+          <span>Upfront Knockdown &amp; Warranty Range</span>
+          <strong id="pestEstRange">$149 Initial • $115/Qtr</strong>
+          <small id="pestEstTimeline">Same-Day Route Slot Open Today • 100% Free Re-Treatments</small>
+        </div>
+        <div id="pestEstPhotoBadge" class="pest-est-photo-badge" hidden>
+          <img
+            id="pestEstPhotoImg"
+            src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+            alt="Uploaded pest photo"
+          />
+          <span>✓ Pest / Damage Photo Logged</span>
+        </div>
+      </div>
+
+      <p id="pestEstSummary" class="pest-modal-desc"></p>
+      <div id="pestEstLineItems" class="pest-est-items"></div>
+
+      <div class="pest-est-notice">
+        <strong>📲 Logged in Lone Star Shield Dispatch &amp; Back-Office Room</strong>
+        <p>Your pest diagnostic and address notes are saved. Want to claim today's route truck window or ask Shield AI a question?</p>
+      </div>
+    </div>
+    <div class="pest-modal-footer">
+      <button type="button" id="pestEstOpenChatBtn" class="pest-submit-btn">
+        Continue With Shield AI Dispatch Desk →
+      </button>
+      <button type="button" id="pestEstOpenBoBtn" class="pest-modal-sec-btn">
+        Inspect Live Ticket in Back-Office Room ⌘K
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!--       Cross-Pillar Live Sync Notification    -->
+<!-- ============================================ -->
+<div id="pestCrossPillarToast" class="pest-toast" hidden>
+  <div class="pest-toast-left">
+    <span class="pest-toast-dot"></span>
+    <div>
+      <strong id="pestToastTitle">Lead Synced to Lone Star Shield Back-Office</strong>
+      <span id="pestToastSub">TPCL Dispatch Brief &amp; SMS Draft Ready in Pillar 2</span>
+    </div>
+  </div>
+  <div class="pest-toast-actions">
+    <button type="button" id="pestToastOpenBoBtn" class="pest-toast-btn">Open Back-Office →</button>
+    <button type="button" id="pestToastCloseBtn" class="pest-toast-close" aria-label="Dismiss notification">×</button>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!--       Floating Desktop AI Concierge Pill     -->
+<!-- ============================================ -->
+<div id="pestFloatingAi" class="pest-floating-ai">
+  <button type="button" class="pest-floating-btn" data-open-pest-ai="chat">
+    <span class="pest-floating-dot"></span>
+    <strong>🛡️ Shield AI Pest Dispatch</strong>
+    <span class="pest-floating-sub">Instant Quote • Text • Same-Day Slot</span>
+  </button>
+</div>
+
+<!-- ============================================ -->
+<!--       Sticky Mobile Call / Text / AI Bar     -->
+<!-- ============================================ -->
+<nav id="pestMobileStickyBar" class="pest-mobile-bar" aria-label="Quick Pest Dispatch Actions">
+  <a href="tel:{{ client.pest.phoneForTel }}" class="pest-mobile-item">
+    <span>📞</span>
+    <strong>Call Tech</strong>
+  </a>
+  <a href="sms:+18303608517?body=Hi%20Lone%20Star%20Shield%20Pest%20%26%20Termite%2C%20I%27d%20like%20a%20same-day%20quote%20for%20pest%20control." class="pest-mobile-item">
+    <span>💬</span>
+    <strong>Text Bug Photo</strong>
+  </a>
+  <button type="button" class="pest-mobile-item pest-mobile-ai" data-open-pest-ai="chat">
+    <span>🛡️</span>
+    <strong>AI Quote</strong>
+  </button>
+</nav>
+
+<!-- ============================================ -->
+<!--  3-Mode Shield AI Pest Concierge Drawer      -->
+<!-- ============================================ -->
+<div id="pestAiBackdrop" class="pest-drawer-backdrop" hidden aria-hidden="true">
+  <aside class="pest-drawer" role="dialog" aria-modal="true" aria-label="Shield AI Pest &amp; Termite Dispatch Concierge">
+    <header class="pest-drawer-header">
+      <div class="pest-drawer-id">
+        <div class="pest-drawer-avatar">🛡️</div>
+        <div>
+          <strong>Shield AI • Lone Star Dispatch Desk</strong>
+          <span>{{ client.pest.license }} • Kid &amp; Pet Safe • Same-Day Routes</span>
+        </div>
+      </div>
+      <button type="button" id="pestAiCloseBtn" class="pest-drawer-close" aria-label="Close AI Concierge">×</button>
+    </header>
+
+    <div class="pest-drawer-tabs" role="tablist">
+      <button type="button" class="pest-tab active" data-pest-mode="chat" role="tab" aria-selected="true">
+        💬 AI Pest Chat
+      </button>
+      <button type="button" class="pest-tab" data-pest-mode="sms" role="tab" aria-selected="false">
+        📲 Instant SMS Quote
+      </button>
+      <button type="button" class="pest-tab" data-pest-mode="callback" role="tab" aria-selected="false">
+        📞 Inspector Callback
+      </button>
+    </div>
+
+    <!-- MODE 1: AI Pest Chat -->
+    <div id="pestPanelChat" class="pest-drawer-panel">
+      <div id="pestChatMessages" class="pest-chat-messages"></div>
+
+      <div class="pest-chat-chips">
+        <button type="button" class="pest-chip" data-pest-chip="How much is your bark scorpion &amp; spider barrier treatment?">
+          🦂 Scorpion Seal Price?
+        </button>
+        <button type="button" class="pest-chip" data-pest-chip="Are your indoor and yard treatments safe for dogs and toddlers?">
+          🐾 Safe for Dogs &amp; Kids?
+        </button>
+        <button type="button" class="pest-chip" data-pest-chip="Do you offer same-day WDI termite inspection reports for home closings?">
+          🪵 Termite WDI Report?
+        </button>
+        <button type="button" class="pest-chip" data-pest-chip="We hear rats scratching in the attic at night—how does exclusion work?">
+          🐀 Rats in Attic Exclusion
+        </button>
+      </div>
+
+      <div class="pest-inline-lead">
+        <button type="button" id="pestToggleInlineLeadBtn" class="pest-inline-toggle">
+          📋 Lock In Written SMS Quote &amp; Same-Day Route Slot →
+        </button>
+        <form id="pestChatLeadForm" class="pest-inline-form" hidden>
+          <div class="pest-inline-grid">
+            <input type="text" name="name" aria-label="Your Name" required placeholder="Your Name *" />
+            <input type="tel" name="phone" aria-label="Mobile Phone" required placeholder="Mobile Phone *" />
+            <input type="text" name="scope" aria-label="Pest Issue and ZIP" required placeholder="Pest Issue &amp; ZIP Code *" class="pest-full" />
+          </div>
+          <label class="pest-mini-tcpa">
+            <input type="checkbox" checked required />
+            <span>1-to-1 SMS consent with {{ client.pest.businessName }}. Reply STOP to opt out.</span>
+          </label>
+          <button type="submit" class="pest-inline-submit">Text Me My Locked-In Price →</button>
+        </form>
+      </div>
+
+      <form id="pestChatComposer" class="pest-chat-composer">
+        <input
+          type="text"
+          id="pestChatInput"
+          aria-label="Ask Shield AI about scorpions, termites, rodents, pet safety, or same-day slots"
+          placeholder="Ask about scorpions, termites, pet safety, or same-day arrival..."
+          autocomplete="off"
+        />
+        <button type="submit" class="pest-chat-send">Send</button>
+      </form>
+    </div>
+
+    <!-- MODE 2: Instant SMS Quote -->
+    <div id="pestPanelSms" class="pest-drawer-panel" hidden>
+      <div class="pest-form-pane">
+        <h3>Get an Instant Written Pest Quote via Text</h3>
+        <p>Select your primary pest concern below. Shield AI will text your mobile with an upfront knockdown price and open your priority ticket in our dispatch room.</p>
+        <form id="pestAiSmsForm" class="pest-pane-form">
+          <label>
+            <span>Your Name *</span>
+            <input type="text" name="name" required placeholder="Marcus Webb" />
+          </label>
+          <label>
+            <span>Mobile Number *</span>
+            <input type="tel" name="phone" required placeholder="(830) 555-0199" />
+          </label>
+          <label>
+            <span>Primary Pest Issue *</span>
+            <select name="service">
+              <option value="Scorpion &amp; Spider Barrier Seal">Scorpion &amp; Spider Barrier Seal</option>
+              <option value="Subterranean Termite Defense / WDI Report">Subterranean Termite Defense / WDI Report</option>
+              <option value="Rodent Steel-Mesh Exclusion &amp; Attic Sanitization">Rodent Steel-Mesh Exclusion &amp; Attic Sanitization</option>
+              <option value="German Roach &amp; Fire Ant Knockdown">German Roach &amp; Fire Ant Knockdown</option>
+              <option value="Mosquito, Flea &amp; Tick Yard Barrier">Mosquito, Flea &amp; Tick Yard Barrier</option>
+            </select>
+          </label>
+          <label>
+            <span>Approx. Home Sq Ft &amp; Activity Notes *</span>
+            <textarea name="notes" rows="3" required placeholder="e.g., 2,600 sq ft in New Braunfels 78132, seeing bark scorpions in laundry room..."></textarea>
+          </label>
+          <label class="pest-mini-tcpa">
+            <input type="checkbox" checked required />
+            <span>I consent to 1-to-1 quote text messages from {{ client.pest.businessName }}. Reply STOP to opt out.</span>
+          </label>
+          <button type="submit" class="pest-submit-btn">Text Me My Upfront Pest Quote →</button>
+          <div id="pestSmsFeedback" class="pest-feedback" hidden></div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODE 3: Licensed TPCL Inspector Callback -->
+    <div id="pestPanelCallback" class="pest-drawer-panel" hidden>
+      <div class="pest-form-pane">
+        <h3>Request a Licensed TPCL Inspector Callback</h3>
+        <p>Dealing with active termite swarmers, real estate WDI deadlines, or attic roof rats? Request a direct call or same-day inspection from our lead TPCL specialist.</p>
+        <form id="pestAiCallbackForm" class="pest-pane-form">
+          <label>
+            <span>Homeowner / Agent Name *</span>
+            <input type="text" name="name" required placeholder="Brenda Villarreal" />
+          </label>
+          <label>
+            <span>Best Phone Number *</span>
+            <input type="tel" name="phone" required placeholder="(830) 555-0192" />
+          </label>
+          <label>
+            <span>Preferred Arrival / Callback Window *</span>
+            <select name="window">
+              <option value="Immediate Phone Callback (Within 15 Min)">Immediate Phone Callback (Within 15 Min)</option>
+              <option value="Same-Day Route Slot (Today 1 PM – 4 PM)">Same-Day Route Slot (Today 1 PM – 4 PM)</option>
+              <option value="Tomorrow Morning Route (8 AM – 11 AM)">Tomorrow Morning Route (8 AM – 11 AM)</option>
+              <option value="Termite / Rodent Attic Inspection Walkthrough">Termite / Rodent Attic Inspection Walkthrough</option>
+            </select>
+          </label>
+          <label>
+            <span>Property ZIP &amp; Issue Summary *</span>
+            <input type="text" name="notes" required placeholder="78130 • Mud tubes on garage slab / need WDI report" />
+          </label>
+          <label class="pest-mini-tcpa">
+            <input type="checkbox" checked required />
+            <span>I consent to a direct phone call and 1-to-1 SMS confirmation from {{ client.pest.businessName }}.</span>
+          </label>
+          <button type="submit" class="pest-submit-btn">Dispatch TPCL Inspector Callback →</button>
+          <div id="pestCallbackFeedback" class="pest-feedback" hidden></div>
+        </form>
+      </div>
+    </div>
+  </aside>
+</div>
+
+<!-- ============================================ -->
+<!--  Pillar 2: 3-Pane Pest Back-Office Room      -->
+<!-- ============================================ -->
+<div id="pestBackofficeShell" class="pbo-shell" hidden aria-hidden="true">
+  <header class="pbo-topbar">
+    <div class="pbo-topbar-left">
+      <span class="pbo-brand-pill">LONE STAR SHIELD DISPATCH ROOM</span>
+      <strong>{{ client.pest.businessName }}</strong>
+      <span class="pbo-license-tag">{{ client.pest.license }} • Live Route &amp; SMS Command</span>
+    </div>
+    <div class="pbo-topbar-right">
+      <button type="button" id="pboOpenTelephonyBtn" class="pbo-top-btn">
+        ⚙️ Telephony &amp; Demo Routing
+      </button>
+      <button type="button" id="pboCloseBtn" class="pbo-close-btn">
+        ← Return to Public Website (Esc)
+      </button>
+    </div>
+  </header>
+
+  <div class="pbo-three-pane">
+    <!-- PANE 1 (25%): Active Thread Queue -->
+    <aside class="pbo-pane-queue">
+      <div class="pbo-pane-header">
+        <div>
+          <strong>Active Dispatch Queue</strong>
+          <span id="pboQueueCount">4 Open Threads</span>
+        </div>
+        <div class="pbo-filter-pills">
+          <button type="button" class="pbo-filter active" data-pbo-filter="all">All</button>
+          <button type="button" class="pbo-filter" data-pbo-filter="Action Required">Needs Action</button>
+          <button type="button" class="pbo-filter" data-pbo-filter="AI Qualification">AI Qualifying</button>
+        </div>
+      </div>
+      <div id="pboThreadList" class="pbo-thread-list"></div>
+    </aside>
+
+    <!-- PANE 2 (50%): Unified Timeline & 3-Mode Handover -->
+    <section class="pbo-pane-timeline">
+      <div class="pbo-timeline-header">
+        <div>
+          <h3 id="pboActiveName">Marcus Webb</h3>
+          <span id="pboActiveMeta">(830) 555-0162 • Veramendi • New Braunfels, TX 78132 • Bark Scorpion Seal</span>
+        </div>
+        <div class="pbo-handover-group" role="group" aria-label="AI Handover Mode">
+          <button type="button" class="pbo-mode-btn active" data-pbo-mode="manual">
+            ✋ Manual (Office Hours)
+          </button>
+          <button type="button" class="pbo-mode-btn" data-pbo-mode="autopilot">
+            🤖 AI Autopilot
+          </button>
+          <button type="button" class="pbo-mode-btn" data-pbo-mode="draft">
+            📝 AI Draft Co-Pilot
+          </button>
+        </div>
+      </div>
+
+      <!-- Simulate Inbound Customer SMS -->
+      <form id="pboSimForm" class="pbo-sim-bar">
+        <span class="pbo-sim-label">📲 Simulate Inbound Homeowner Text:</span>
+        <input
+          type="text"
+          id="pboSimInput"
+          aria-label="Simulate inbound homeowner text message"
+          placeholder="e.g., How long until our dogs can go back in the backyard after you spray?"
+        />
+        <button type="submit" class="pbo-sim-btn">Simulate Inbound SMS</button>
+      </form>
+
+      <!-- Timeline Messages -->
+      <div id="pboTimelineMessages" class="pbo-messages"></div>
+
+      <!-- AI Co-Pilot Draft Banner -->
+      <div id="pboDraftBanner" class="pbo-draft-banner" hidden>
+        <div class="pbo-draft-top">
+          <strong>🤖 Shield AI Co-Pilot Suggested Reply</strong>
+          <span>Calibrated to TPCL #089412 Safety &amp; Route Pricing</span>
+        </div>
+        <textarea id="pboDraftTextarea" aria-label="AI Suggested Reply Draft" rows="2"></textarea>
+        <div class="pbo-draft-actions">
+          <button type="button" id="pboApproveDraftBtn" class="pbo-approve-btn">✓ Approve &amp; Send SMS</button>
+          <button type="button" id="pboDismissDraftBtn" class="pbo-dismiss-btn">Dismiss</button>
+        </div>
+      </div>
+
+      <!-- Manual Outbound SMS Composer -->
+      <form id="pboComposerForm" class="pbo-composer">
+        <input
+          type="text"
+          id="pboComposerInput"
+          aria-label="Send manual 1-to-1 SMS or route update to homeowner"
+          placeholder="Send manual 1-to-1 SMS or technician arrival update..."
+          autocomplete="off"
+        />
+        <button type="submit" class="pbo-send-btn">Send SMS →</button>
+      </form>
+    </section>
+
+    <!-- PANE 3 (25%): Live AI Pest & Property Brief -->
+    <aside class="pbo-pane-summary">
+      <div class="pbo-pane-header">
+        <strong>Live AI Pest &amp; Property Brief</strong>
+        <span id="pboBriefBadge" class="pbo-status-badge">Route Ready</span>
+      </div>
+
+      <div class="pbo-summary-body">
+        <div class="pbo-summary-card">
+          <span class="pbo-summary-label">LOCKED-IN TREATMENT QUOTE</span>
+          <strong id="pboBriefPrice" class="pbo-summary-price">$149 Initial • $115/Qtr</strong>
+          <small id="pboBriefService">Scorpion &amp; Spider Weep-Hole Barrier Seal</small>
+        </div>
+
+        <div class="pbo-specs-list">
+          <div class="pbo-spec-box">
+            <span>Assigned Chemistry &amp; Spec:</span>
+            <strong id="pboBriefChem">Demand® CS Micro-Cap + Delta Dust Weep Holes</strong>
+          </div>
+          <div class="pbo-spec-box">
+            <span>Kid &amp; Pet Safety Protocol:</span>
+            <strong id="pboBriefSafety">Botanical Interior + 30-Min Yard Dry Time</strong>
+          </div>
+          <div class="pbo-spec-box">
+            <span>Property Location:</span>
+            <strong id="pboBriefLocation">Veramendi • New Braunfels, TX 78132</strong>
+          </div>
+          <div class="pbo-spec-box">
+            <span>Lead Source:</span>
+            <strong id="pboBriefSource">Website Photo ID Estimator</strong>
+          </div>
+        </div>
+
+        <div class="pbo-notes-box">
+          <span>AI Extracted Infestation &amp; Access Notes</span>
+          <p id="pboBriefNotes"></p>
+        </div>
+
+        <div class="pbo-cal-box">
+          <span>1-Click Route Truck Arrival Windows (Cal.com)</span>
+          <button type="button" class="pbo-cal-btn" data-pbo-slot="Today 2:00 PM – 4:00 PM (Same-Day Scorpion &amp; Pest Route)">
+            🚐 Dispatch Slot: Today 2:00 PM – 4:00 PM
+          </button>
+          <button type="button" class="pbo-cal-btn" data-pbo-slot="Tomorrow 8:30 AM – 10:30 AM (TPCL Termite / Rodent Inspector)">
+            🚐 Dispatch Slot: Tomorrow 8:30 AM
+          </button>
+          <button type="button" class="pbo-cal-btn" data-pbo-slot="Tomorrow 1:00 PM – 3:00 PM (Full Perimeter + Attic Service)">
+            🚐 Dispatch Slot: Tomorrow 1:00 PM
+          </button>
+        </div>
+      </div>
+    </aside>
+  </div>
+</div>
+
+<!-- ============================================ -->
+<!--     Live Demo Telephony Routing Modal        -->
+<!-- ============================================ -->
+<div id="pestTelephonyModal" class="pest-modal-backdrop" hidden aria-hidden="true">
+  <div class="pest-modal-card" role="dialog" aria-modal="true" aria-labelledby="pestTelTitle">
+    <div class="pest-modal-header">
+      <div>
+        <span class="pest-modal-tag">LIVE DEMO TELEPHONY &amp; WEBHOOK ROUTING</span>
+        <h3 id="pestTelTitle">Configure Prospect Phone for Live SMS Testing</h3>
+      </div>
+      <button type="button" id="pestTelCloseBtn" class="pest-modal-close" aria-label="Close telephony modal">×</button>
+    </div>
+    <div class="pest-modal-body">
+      <p class="pest-modal-desc">
+        Enter the prospect's mobile number below so outbound SMS quotes from the Lone Star Shield Back-Office Room route directly to their cell phone during your demo.
+      </p>
+      <form id="pestTelephonyForm" class="pest-pane-form">
+        <label>
+          <span>Prospect Mobile Phone (E.164 or 10-Digit)</span>
+          <input type="tel" id="pestTelInput" placeholder="+18303608517" />
+        </label>
+        <div class="pest-modal-banner">
+          <div>
+            <span>Public Display Number</span>
+            <strong>{{ client.pest.phoneFormatted }}</strong>
+          </div>
+          <div>
+            <span>Live Voice / SMS Route</span>
+            <strong>+1 (830) 465-2566 / +1 (830) 360-8517</strong>
+          </div>
+        </div>
+        <button type="submit" class="pest-submit-btn">Save Live Demo Phone Override →</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script defer src="/assets/js/ai-handoff.js"></script>
+<script defer src="/assets/js/pest-control-app.js"></script>

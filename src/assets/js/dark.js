@@ -1,5 +1,3 @@
-
-
 //
 //    The Dark Mode System
 //
@@ -32,11 +30,14 @@ function detectColourScheme() {
   theme === 'dark' ? enableDarkMode() : disableDarkMode();
 }
 
-// run on page load
-detectColourScheme();
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+if (darkModeToggle) {
+  // run on page load only when dark-mode toggle exists
+  detectColourScheme();
 
-// add event listener to the dark mode button toggle
-document.getElementById('dark-mode-toggle').addEventListener('click', () => {
-  // on click, check localstorage for the dark mode value, use to apply the opposite of what's saved
-  localStorage.getItem('theme') === 'light' ? enableDarkMode() : disableDarkMode();
-});
+  // add event listener to the dark mode button toggle
+  darkModeToggle.addEventListener('click', () => {
+    // on click, check localstorage for the dark mode value, use to apply the opposite of what's saved
+    localStorage.getItem('theme') === 'light' ? enableDarkMode() : disableDarkMode();
+  });
+}

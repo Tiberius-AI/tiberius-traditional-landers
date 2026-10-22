@@ -1,15 +1,39 @@
 {
-  "name": "Oak Harbor Web Designs",
-  "email": "hello@oakharbor.com",
-  "phone": "555-779-4407",
-  "phoneFormatted": "(555) 779-4407",
-  "address": {
-    "lineOne": "First Address Line",
-    "lineTwo": "Second Address Line, If Needed",
-    "city": "Denver",
-    "county": "CO",
-    "postcode": "80206",
-    "mapLink": "https://goo.gl/maps/UAQn4vuGDiwv7DV39"
+  "name": "Tiberius Traditional Contractor Demos",
+  "email": "dispatch@tiberius.ai",
+  "domain": "https://demos.tiberius.ai",
+  "aiBackend": {
+    "conversationUrl": "/ai-conversation/",
+    "leadWebhookUrl": "https://your-webhook-or-api-endpoint.com/lead-intake"
   },
-  "domain": "www.website.com"
+  "pest": {
+    "slug": "pest-control",
+    "businessName": "Lone Star Shield Pest & Termite",
+    "tagline": "Same-Day Pest, Scorpion & Termite Elimination",
+    "phoneForTel": "8305550192",
+    "phoneFormatted": "(830) 555-0192",
+    "license": "TPCL #089412",
+    "serviceArea": "Comal, Guadalupe & Bexar Counties",
+    "rating": "4.9 ★ (412 Google Reviews)",
+    "primaryColor": "#0f172a",
+    "accentColor": "#dc2626"
+  },
+  "tree": {
+    "slug": "tree-service",
+    "businessName": "IronOak Tree Service & Land Clearing",
+    "tagline": "Certified Arborists, Crane Removals & Forestry Mulching",
+    "phoneForTel": "8305550148",
+    "phoneFormatted": "(830) 555-0148",
+    "license": "ISA Certified Arborist #TX-4491A",
+    "serviceArea": "New Braunfels, San Marcos, Seguin & San Antonio",
+    "rating": "5.0 ★ (285 Local Reviews)",
+    "primaryColor": "#14281d",
+    "accentColor": "#d97706"
+  },
+  "address": {
+    "lineOne": "100 Main Plaza",
+    "city": "New Braunfels",
+    "state": "TX",
+    "zip": "78130"
+  }
 }
